@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { combineAll } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-serch',
-  templateUrl: './serch.component.html',
-  styleUrls: ['./serch.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-export class SerchComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   constructor(private router: Router) { }
 

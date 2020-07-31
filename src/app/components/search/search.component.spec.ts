@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SerchComponent } from './serch.component';
+import { SerchComponent } from './search.component';
 
 describe('SerchComponent', () => {
   let component: SerchComponent;
