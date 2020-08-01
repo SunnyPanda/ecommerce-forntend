@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Luv2ShopFormService } from 'src/app/services/luv2-shop-form.service';
+import { Country } from 'src/app/common/country';
+import { count } from 'rxjs/operators';
 
 @Component({
   selector: 'app-checkout',
@@ -16,6 +18,8 @@ export class CheckoutComponent implements OnInit {
 
   creditCardYears: number[] = [];
   creditCardMonths: number[] = [];
+
+  countries: Country[] = [];
 
   constructor(private formBuilder: FormBuilder,
               private luv2ShopFormService: Luv2ShopFormService) { }
@@ -61,7 +65,7 @@ export class CheckoutComponent implements OnInit {
         console.log("Retrieved credit card months: " + JSON.stringify(data));
         this.creditCardMonths = data;
       }
-    )
+    );
 
     // populate credit card years
     this.luv2ShopFormService.getCreditCardYears().subscribe(
@@ -69,7 +73,17 @@ export class CheckoutComponent implements OnInit {
         console.log("Retrieved credit card years: " + JSON.stringify(data));
         this.creditCardYears = data;
       }
+    );
+
+    // populate countries
+
+    this.luv2ShopFormService.getCountries().subscribe(
+      data => {
+        console.log("Retrieved countries: " + JSON.stringify(data));
+        this.countries = data;
+      }
     )
+
   }
 
   copyShippingAddressToBillingAddress(event) {

@@ -10,8 +10,8 @@ import { map } from 'rxjs/operators';
 })
 export class Luv2ShopFormService {
 
-  private countriesUrl = 'http://localhost:8080/countries';
-  private statesUrl = 'http://localhost:8080/states';
+  private countriesUrl = 'http://localhost:8080/api/countries';
+  private statesUrl = 'http://localhost:8080/api/states';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -74,6 +74,6 @@ interface GetResponseCountries {
 
 interface GetResponseStates {
   _embedded: {
-    countries: State[];
+    states: State[];
   }
 }
