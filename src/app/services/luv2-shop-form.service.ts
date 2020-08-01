@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Luv2ShopFormService {
 
-  constructor() { }
+  private countriesUrl = 'http://localhost:8080/countries';
+  private statesUrl = 'http://localhost:8080/states';
+
+  constructor(private httpClient: HttpClient) { }
 
   getCreditCardMonths(startMonth: number): Observable<number[]> {
 
